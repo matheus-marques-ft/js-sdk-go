@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-// 创建 Transport 支持使用不安全的 https
+// Create a Transport that supports insecure https
 
 func NewTransport(insecure bool) http.RoundTripper {
 	transport := http.DefaultTransport.(*http.Transport).Clone()

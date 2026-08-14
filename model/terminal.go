@@ -52,7 +52,7 @@ const (
 	TaskLockSession   = "lock_session"
 	TaskUnlockSession = "unlock_session"
 
-	// TaskPermExpired TaskPermValid 非 api 数据，仅用于内部处理
+	// TaskPermExpired TaskPermValid are not API data, used only internally
 
 	TaskPermExpired = "perm_expired"
 	TaskPermValid   = "perm_valid"
@@ -81,7 +81,7 @@ type ReplayConfig struct {
 	Region string `json:"REGION,omitempty"`
 
 	/*
-		azure 专属
+		azure-specific
 	*/
 	AccountName    string `json:"ACCOUNT_NAME,omitempty"`
 	AccountKey     string `json:"ACCOUNT_KEY,omitempty"`

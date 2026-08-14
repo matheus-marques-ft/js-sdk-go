@@ -38,13 +38,13 @@ type Asset struct {
 	SecretInfo SecretInfo   `json:"secret_info"`
 	Platform   BasePlatform `json:"platform"`
 
-	Domain *BaseDomain `json:"domain"` // token 方式获取的资产，domain 为 nil
+	Domain *BaseDomain `json:"domain"` // asset fetched via token, domain is nil
 
 	Comment  string `json:"comment"`
 	OrgName  string `json:"org_name"`
-	IsActive bool   `json:"is_active"` // 判断资产是否禁用
+	IsActive bool   `json:"is_active"` // indicates whether the asset is disabled
 
-	Accounts Actions `json:"accounts,omitempty"` // 只有 detail api才会有这个字段
+	Accounts Actions `json:"accounts,omitempty"` // this field is only present in the detail API
 
 	Gateway *Gateway `json:"gateway,omitempty"`
 }

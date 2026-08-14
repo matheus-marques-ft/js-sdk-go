@@ -53,9 +53,9 @@ func (a Actions) Permission() Permission {
 }
 
 /*
- 'actions': [{'label': '连接', 'value': 'connect'},
-             {'label': '上传文件', 'value': 'upload'},
-             {'label': '下载文件', 'value': 'download'},
+ 'actions': [{'label': 'Connect', 'value': 'connect'},
+             {'label': 'Upload file', 'value': 'upload'},
+             {'label': 'Download file', 'value': 'download'},
              {'label': 'Copy', 'value': 'copy'},
              {'label': 'Paste', 'value': 'paste'}],
 */

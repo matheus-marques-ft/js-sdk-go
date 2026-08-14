@@ -47,7 +47,7 @@ type WorkClient struct {
 }
 
 func (w *WorkClient) CreateReplaySessionTask(sessionId, replayDirPath string, taskConfig *TaskConfig) (string, error) {
-	// 读取 replay json
+	// read the replay json
 	replayMetaFilePath := path.Join(replayDirPath, fmt.Sprintf("%s.replay.json", sessionId))
 
 	f, err := os.Open(replayMetaFilePath)
@@ -60,7 +60,7 @@ func (w *WorkClient) CreateReplaySessionTask(sessionId, replayDirPath string, ta
 	if err := json.NewDecoder(f).Decode(&replayMeta); err != nil {
 		return "", fmt.Errorf("error decoding replay meta file: %w", err)
 	}
-	// 这里计算文件的checksum
+	// compute the file checksum here
 	for i, file := range replayMeta.Files {
 		replayPath := filepath.Join(replayDirPath, file.Name)
 		checksum, err := FileSHA256(replayPath)

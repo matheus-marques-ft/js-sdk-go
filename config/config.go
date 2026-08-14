@@ -36,7 +36,7 @@ const (
 )
 
 /*
-SERVER_HOSTNAME: 环境变量名，可用于自定义默认注册名称的前缀
+SERVER_HOSTNAME: environment variable name, used to customize the default registration name prefix
 default name rule:
 prefixName-{SERVER_HOSTNAME}-{HOSTNAME}-RandomStr
  or

@@ -114,7 +114,7 @@ type ConnectMethod struct {
 	Value     string `json:"value"`
 }
 
-// token 授权和过期状态
+// token authorization and expiration status
 
 type TokenCheckStatus struct {
 	Detail  string `json:"detail"`

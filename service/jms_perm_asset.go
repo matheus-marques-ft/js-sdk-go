@@ -201,7 +201,7 @@ func TrimHost(raw string) string {
 	if strings.HasPrefix(s, "http://") || strings.HasPrefix(s, "https://") {
 		u, err := url.Parse(s)
 		if err != nil {
-			return raw // 解析失败就原样返回
+			return raw // return as-is if parsing fails
 		}
 		path := u.Path
 		result := path

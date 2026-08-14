@@ -74,8 +74,8 @@ func (s *JMService) FinishShareRoom(recordId string) (err error) {
 
 func (s *JMService) SyncUserKokoPreference(cookies map[string]string, data model.UserKokoPreference) (err error) {
 	/*
-		csrfToken 存储在 cookies 中
-		其 使用的名称 name 为 `{SESSION_COOKIE_NAME_PREFIX}csrftoken` 动态组成
+		csrfToken is stored in cookies
+		its name is dynamically composed as `{SESSION_COOKIE_NAME_PREFIX}csrftoken`
 	*/
 	var (
 		csrfToken  string

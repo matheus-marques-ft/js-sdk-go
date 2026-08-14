@@ -10,7 +10,7 @@ type NodeTree struct {
 	IsParent bool     `json:"isParent"`
 	Meta     TreeMeta `json:"meta"`
 
-	ChkDisabled bool `json:"chkDisabled"` // 判断资产是否禁用
+	ChkDisabled bool `json:"chkDisabled"` // indicates whether the asset is disabled
 }
 
 type TreeMeta struct {

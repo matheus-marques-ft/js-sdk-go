@@ -44,7 +44,7 @@ func MemoryUsagePercent() float64 {
 		return -1
 	}
 	if cMem, err := CGroupMem(); err == nil && cMem.LimitUsage < vmStatus.Total {
-		// 由此可判断，程序运行在容器内，且有内存限制
+		// this indicates the program is running inside a container with a memory limit
 		return convertFloatDecimal(cMem.Percent())
 	}
 	return convertFloatDecimal(vmStatus.UsedPercent)

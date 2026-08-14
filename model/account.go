@@ -26,7 +26,7 @@ func (a *BaseAccount) IsSSHKey() bool {
 	return a.SecretType.Value == "ssh_key"
 }
 
-// 如果是 null，表示这个账号是一个空用户名
+// if it is null, this account has an empty username
 
 func (a *BaseAccount) IsNull() bool {
 	return a.Username == "null"

@@ -9,7 +9,7 @@ import (
 
 func setup() *JMService {
 	/*
-		从环境变量获取 认证信息
+		Get auth info from environment variables
 		CORE_HOST
 		access_key_id
 		access_key_secret
