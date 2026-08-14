@@ -46,7 +46,7 @@ func (a *AssetNodeSorter) Less(i, j int) bool {
 }
 
 /*
-key的排列顺序：
+key ordering:
 1 1:3 1:3:0 1:4 1:5 1:8
 */
 func keySort(node1, node2 *Node) bool {

@@ -54,7 +54,7 @@ func (u *UserClient) GetAPIToken() (resp AuthResponse, err error) {
 		"login_type":  u.Opts.LoginType,
 	}
 	ak := u.Opts.signKey
-	// 移除 Secret 中的 "-", 保证长度为 32
+	// Remove "-" from Secret to ensure a length of 32
 	secretKey := strings.ReplaceAll(ak.Secret, "-", "")
 	encryptKey, err1 := GenerateEncryptKey(secretKey)
 	if err1 != nil {
@@ -214,7 +214,7 @@ func DecryptECB(ciphertext string, key string) (string, error) {
 		block.Decrypt(plaintext[i:i+aes.BlockSize], ret[i:i+aes.BlockSize])
 	}
 
-	// 移除 Zero 填充
+	// Remove zero padding
 	for len(plaintext) > 0 && plaintext[len(plaintext)-1] == 0x00 {
 		plaintext = plaintext[:len(plaintext)-1]
 	}

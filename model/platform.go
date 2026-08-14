@@ -55,11 +55,11 @@ func (p Platform) GetProtocolSetting(protocol string) (PlatformProtocol, bool) {
 
 type PlatformProtocol struct {
 	Protocol
-	Setting map[string]any `json:"setting"` // 参考 ProtocolSetting 里的字段
+	Setting map[string]any `json:"setting"` // see the fields in ProtocolSetting
 }
 
 func (p PlatformProtocol) GetSetting() ProtocolSetting {
-	// 将 map[string]any 转换为 ProtocolSetting
+	// convert map[string]any into ProtocolSetting
 	jsonData, _ := json.Marshal(p.Setting)
 	var setting ProtocolSetting
 	_ = json.Unmarshal(jsonData, &setting)
@@ -78,7 +78,7 @@ type ProtocolSetting struct {
 	Console  bool   `json:"console"`
 	AdDomain string `json:"ad_domain"`
 
-	// for redis 特殊处理的字段
+	// field for special handling of redis
 	AuthUsername bool `json:"auth_username"`
 
 	TelnetUsernamePrompt string `json:"username_prompt"`

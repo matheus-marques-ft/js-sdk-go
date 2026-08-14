@@ -20,8 +20,8 @@ func (f CommandACLs) Len() int {
 }
 
 /*
-	core 优先级的值越小，优先级越高，因此按此排序，第一个是优先级最高的
-	优先级相同则 Action Deny 的优先级更高
+	in core, the smaller the priority value, the higher the priority, so sorting this way puts the highest priority first
+	if priorities are equal, Action Deny takes higher priority
 */
 
 func (f CommandACLs) Less(i, j int) bool {

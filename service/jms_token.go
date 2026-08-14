@@ -23,7 +23,7 @@ func (s *JMService) CreateSuperConnectToken(data *SuperConnectTokenReq) (resp mo
 		apiClient.SetAuthSign(s.opt.sign)
 	}
 	apiClient.SetHeader(orgHeaderKey, orgHeaderValue)
-	// 移除 Secret 中的 "-", 保证长度为 32
+	// Remove "-" from Secret to ensure a length of 32
 	secretKey := strings.ReplaceAll(ak.Secret, "-", "")
 	encryptKey, err1 := GenerateEncryptKey(secretKey)
 	if err1 != nil {
